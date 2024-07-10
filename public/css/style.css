@@ -1,0 +1,141 @@
+.carousel-item {
+            height: 70vh; /* Height set to 50% of viewport height */
+            
+        }
+        .carousel-item img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover; 
+        }
+
+        .carousel,
+        .carousel-inner,
+        .carousel-item {
+            
+           
+           padding-left:40px;
+           padding-right:40px;
+           padding-top:10px;
+        }
+        /* Style for carousel control buttons */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%; /* Adjust the width of the control area if needed */
+            background-color: transparent; /* Remove default background */
+            border: none; /* Remove borders */
+            margin-right: 20px; /* Add margin from both ends */
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: transparent; /* Remove default background */
+            background-size: 100%, 100%; /* Adjust size if needed */
+            background-image: none; /* Remove the default image */
+        }
+        .carousel-control-prev-icon::after,
+        .carousel-control-next-icon::after {
+            content: '❮'; /* Customize the icon */
+           
+            font-size: 2rem; /* Adjust icon size */
+            color: black; /* Icon color */
+           
+        }
+        .carousel-control-next-icon::after {
+            content: '❯'; /* Customize the icon */
+            color:black;
+           
+        } 
+        .carousel-control-prev{
+            margin-left:100px;
+        }
+        .carousel-control-next{
+            margin-right:100px;
+        }
+        
+
+        .carousel-item {
+            transition: transform 0.4s ease-in-out; /* Faster transition */
+        }
+        /* Remove dark screen during transition */
+        .carousel-fade .carousel-item {
+            opacity: 1; /* Ensure opacity is 1 during transition */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Match the transition speed */
+        }
+
+        .card-all{
+            height:280px;
+            width:400px;
+            border:2px solid white;
+        }
+        .card-bdy{
+            width:400px;
+        }
+        .container{
+            margin-top:50px;
+            
+        }
+        .card-main{
+            width:400px;
+            margin:10px;
+            margin-left:-90px;
+            margin-right:-80px;
+        }
+        .flex-container{
+            gap:180px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 100px; /* Adjust as needed for the desired gap */
+           
+        }
+        .col-ho{
+            margin-bottom: -180px;
+        }
+
+        footer{
+          
+            height:110px;
+            text-align: center;
+            margin-top:190px;
+           
+        }
+        .all{
+            height:auto;
+        }
+        .page-wrapper{
+            margin:50px auto;
+            box-shadow:0 0 10px #ccc;
+            border-radius: 10px;
+            padding:20px 15px;
+        }
+        .page-wrapper h1{
+            text-align: center;
+        }
+        .card-block{
+            padding:15px;
+        }
+        .articles{
+            margin-top:15px;
+        }
+        .article-inline:nth-of-type(odd)
+        {
+            background: rgba(0,0,0,0.05);
+        }
+        .article-inline{
+            padding-left:10px;
+        }
+        .w60{
+            width:60%;
+        }
+        body{
+            height:100%;
+        }
+        /* .main-details{
+            margin-top:-700px;
+        } */
+       
+
+        
+          
+
+        
+
+        
