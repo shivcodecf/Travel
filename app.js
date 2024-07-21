@@ -1,4 +1,5 @@
 let express= require('express');
+require('dotenv').config();
 
 let postsRouter = require('./routes/posts');
 
@@ -32,6 +33,7 @@ app.set('view engine','ejs');
 
 let mongoose = require('mongoose');
 
+const PORT = process.env.PORT || 3003;
 
 
 
@@ -44,15 +46,32 @@ let multer = require('multer');
 
 
 
-mongoose.connect('mongodb://0.0.0.0:27017/travels', { 
-    
-    
-    useNewUrlParser: true,
-   
-  
 
 
-});
+// Log environment variables to check if they're loaded correctly
+console.log('MONGODB_URI:', process.env.MONGODB_URI);
+
+// Check if MONGODB_URI is loaded correctly
+if (!process.env.MONGODB_URI) {
+  console.error('MONGODB_URI is not defined in the environment variables');
+  process.exit(1);
+}
+
+// Connect to MongoDB using the connection string from environment variables
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch(err => {
+    console.error('Error connecting to MongoDB', err);
+  });
+
+// Example route
+// app.get('/', (req, res) => {
+//   res.send('Hello World!');
+// });
+
+
 
 
 
@@ -97,6 +116,7 @@ app.use('/users',usersRouter);
 
 app.get('/landmark',async (req,res)=>{
 
+
     let id= req.query.id;
     let post = await Post.findOne({id:id});
   res.render('landmark',{
@@ -106,6 +126,7 @@ app.get('/landmark',async (req,res)=>{
     text:post.text,
   });
 
+
 })
 
 
@@ -113,7 +134,7 @@ app.get('/landmark',async (req,res)=>{
 const port = 3003;
 // let isLoggedIn = false;
 
-app.get('/admin',(req,resp)=>{
+app.get('/admin',(req,resp)=> {
 
   let token = req.cookies['auth_token'];
 

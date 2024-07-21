@@ -19,11 +19,13 @@ createForm.addEventListener('submit', function(e) {
 
 
   fetch('http://localhost:3003/posts', {
+
      method: 'POST',
      headers:{
       'Content-Type':'application/json'
 
     },
+
     body: JSON.stringify({
       title:createTitle.value,
       country:createCountry.value,
@@ -33,4 +35,7 @@ createForm.addEventListener('submit', function(e) {
     })
     
     }).then((response)=>response.text()).then((data)=>window.history.go());
+
   })
+
+  

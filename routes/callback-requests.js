@@ -23,9 +23,12 @@ router.post('/' , async (req,resp)=>{
 });
 
 router.delete('/:id',authMiddleware, async (req,resp)=>{
+
     await CallbackRequest.deleteOne({id: req.params.id});
     resp.send('deleted');
+
 
 });
 
 module.exports = router;
+

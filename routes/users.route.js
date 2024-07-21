@@ -15,6 +15,7 @@ router.post('/login',async (req,resp)=>{
     let password = req.body.password;
 
     let users = await User.find().where({email:email});
+
       if(users.length>0)
         { 
           let ComparsionResult = await bcrypt.compare(password, users[0].password);
@@ -48,6 +49,7 @@ router.post('/register',async (req,resp)=>{
     let password = req.body.password;
 
     let users = await User.find().where({email:email});
+    
       if(users.length==0)
         {  
             let encryptedPass = await bcrypt.hash(password,12);

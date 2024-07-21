@@ -6,7 +6,8 @@ function checkAuth(req,resp,next){
    
     let token = req.cookies['auth_token'];
 
-  if(token && auth.checkToken(token)){
+  if(token && auth.checkToken(token)){   //here we check whether the cookie exists and its token are correct.
+    
     next();
 
 
