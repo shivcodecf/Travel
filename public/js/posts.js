@@ -1,7 +1,7 @@
 async function getPosts() {
 
     try {
-        const response = await fetch('http://localhost:3003/posts');
+        const response = await fetch('/posts');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

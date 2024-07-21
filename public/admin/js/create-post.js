@@ -18,7 +18,7 @@ createForm.addEventListener('submit', function(e) {
   // data.append('description',text.substring(0, text.indexOf('.') + 1));
 
 
-  fetch('http://localhost:3003/posts', {
+  fetch('/posts', {
 
      method: 'POST',
      headers:{

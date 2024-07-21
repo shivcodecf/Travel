@@ -12,7 +12,7 @@ articlesBlock.addEventListener('click', async function(e) {
          id = e.target.parentNode.parentNode.querySelector('.id').value;
 
         try {
-            let response = await fetch(`http://localhost:3003/posts/` + id);
+            let response = await fetch(`/posts/` + id);
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
@@ -39,7 +39,7 @@ articlesBlock.addEventListener('click', async function(e) {
 
 updateForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    fetch('http://localhost:3003/posts/' + id, {
+    fetch('/posts/' + id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
