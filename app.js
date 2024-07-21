@@ -48,8 +48,13 @@ let multer = require('multer');
 
 
 
-// Log environment variables to check if they're loaded correctly
+// Log environment variables to check if they're loaded correctly 
 console.log('MONGODB_URI:', process.env.MONGODB_URI);
+
+let username = process.env.mongoUserName;
+
+let password = process.env.mongoUserPass;
+
 
 // Check if MONGODB_URI is loaded correctly
 if (!process.env.MONGODB_URI) {
@@ -58,7 +63,7 @@ if (!process.env.MONGODB_URI) {
 }
 
 // Connect to MongoDB using the connection string from environment variables
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(`mongodb+srv://${username}:${password}@tour.zg0nkrj.mongodb.net/tour1`)
   .then(() => {
     console.log('Connected to MongoDB');
   })
